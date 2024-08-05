@@ -291,21 +291,26 @@ if(val_conectado === 1){
                 console.log('seleccione encuesta a votar: ')
                 lista.verEncuestas()
                 const seleccion = parseInt(prompt(`Seleccione el Nro de encuesta a votar: `))
-                for(k=0; k<3;k++){
-                    lista['dat'][seleccion]['encuesta'].votarPregunta(k);
-                    if(k===2){
-                        const ver_resultado = prompt('desea ver resultado de la votacion presione 1 para si otra para No')
-                        if(ver_resultado === '1'){
-                            for(r=0; r<3;r++){
-                                lista['dat'][seleccion]['encuesta'].verResultadoPregunta(r);
+                if(seleccion< lista.len) {
+                    for(k=0; k<3;k++){
+                        lista['dat'][seleccion]['encuesta'].votarPregunta(k);
+                        if(k===2){
+                            const ver_resultado = prompt('desea ver resultado de la votacion presione 1 para si otra para No')
+                            if(ver_resultado === '1'){
+                                for(r=0; r<3;r++){
+                                    lista['dat'][seleccion]['encuesta'].verResultadoPregunta(r);
+                                }
+                            }
+                            else{
+                                console.log('ok')
                             }
                         }
-                        else{
-                            console.log('ok')
-                        }
                     }
+                //validador_salir = 1;
                 }
-            //validador_salir = 1;
+                else{
+                    console.alert('seleccion no valida')
+                }
             }
         }
     }
@@ -316,4 +321,5 @@ if(val_conectado === 1){
 //let test = new Encuestas(8);
 
 //test.agregarPregunta('te gusta el pan con mantequilla',2)
+
 
