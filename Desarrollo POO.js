@@ -239,7 +239,9 @@ let val_conectado = 0
 while (val_conectado != 1){
     let varUsuIng = prompt(`  ! BIENVENIDOS AL 
         SISTEMA DE VOTACION DE ENCUESTAS RANDOM SVER !
-        ingrese usuario :`);
+        ingrese usuario 
+        (DEBE TENER LA CONSOLA ABIERTA
+        PARA RESPONDER):`);
     let conectado = array.Login(varUsuIng);
     if (conectado === 1){
         val_conectado = 1;
@@ -309,7 +311,7 @@ if(val_conectado === 1){
                 //validador_salir = 1;
                 }
                 else{
-                    console.alert('seleccion no valida')
+                    console.log('seleccion no valida')
                 }
             }
         }
@@ -321,5 +323,4 @@ if(val_conectado === 1){
 //let test = new Encuestas(8);
 
 //test.agregarPregunta('te gusta el pan con mantequilla',2)
-
 
